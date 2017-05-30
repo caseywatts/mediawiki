@@ -62,6 +62,8 @@ function casLogin($user, &$result) {
 
 		$lg = Language::factory($wgLanguageCode);
 
+    print "title" . $_REQUEST["title"];
+
 		if ($_REQUEST["title"] == $lg->specialPage("Userlogin")) {
 			// Initialize the session
 			session_start();
@@ -104,13 +106,13 @@ function casLogin($user, &$result) {
 			$user = $u;
 
 			// Redirect if a returnto parameter exists
-			$returnto = $wgRequest->getVal("returnto");
-			if ($returnto) {
-				$target = Title::newFromText($returnto);
-				if ($target) {
-					$wgOut->redirect($target->getFullUrl()."&action=purge"); //action=purge is used to purge the cache.
-				}
-			}
+			// $returnto = $wgRequest->getVal("returnto");
+			// if ($returnto) {
+			// 	$target = Title::newFromText($returnto);
+			// 	if ($target) {
+			// 		$wgOut->redirect($target->getFullUrl()."&action=purge"); //action=purge is used to purge the cache.
+			// 	}
+			// }
 		}
 		else if ($_REQUEST["title"] == $lg->specialPage("Userlogout")) {
 			// Logout
