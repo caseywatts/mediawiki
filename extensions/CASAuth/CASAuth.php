@@ -49,7 +49,7 @@ $CASAuth = array(
 
 // Setup hooks
 global $wgHooks;
-// $wgHooks["UserLoadFromSession"][] = "casLogin";
+$wgHooks["UserLoadFromSession"][] = "casLogin";
 $wgHooks["UserLogoutComplete"][] = "casLogout";
 $wgHooks["GetPreferences"][] = "casPrefs";
 
