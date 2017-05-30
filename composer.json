@@ -23,6 +23,7 @@
 		"ext-json": "*",
 		"ext-mbstring": "*",
 		"ext-xml": "*",
+		"jasig/phpCAS": "*",
 		"liuggio/statsd-php-client": "1.0.18",
 		"mediawiki/at-ease": "1.1.0",
 		"oojs/oojs-ui": "0.21.4",
