@@ -62,8 +62,6 @@ function casLogin($user, &$result) {
 
 		$lg = Language::factory($wgLanguageCode);
 
-    print($lg->specialPage("Userlogin"));
-
 		if ($_REQUEST["title"] == $lg->specialPage("Userlogin")) {
 			// Initialize the session
 			session_start();
@@ -76,34 +74,34 @@ function casLogin($user, &$result) {
 			phpCAS::client($CASAuth["Version"], $CASAuth["Server"], $CASAuth["Port"], $CASAuth["Url"], false);
 			phpCAS::setNoCasServerValidation();
 			phpCAS::forceAuthentication(); //Will redirect to CAS server if not logged in
-
-			// Get username
-			$username = phpCAS::getUser();
-
-			// Get MediaWiki user
-			$u = User::newFromName($username);
-
-			// Create a new account if the user does not exists
-			if ($u->getID() == 0 && $CASAuth["CreateAccounts"]) {
-				// Create the user
-				$u->addToDatabase();
-				$u->setRealName($username);
-				$u->setEmail($username."@".$CASAuth["EmailDomain"]);
-				$u->setPassword( md5($username.$CASAuth["PwdSecret"]) ); //PwdSecret is used to salt the username, which is then used to create an md5 hash which becomes the password
-				$u->setToken();
-				$u->saveSettings();
-
-				// Update user count
-				$ssUpdate = new SiteStatsUpdate(0,0,0,0,1);
-				$ssUpdate->doUpdate();
-			}
-
-			// Login successful
-			if ($CASAuth["RememberMe"]) {
-				$u->setOption("rememberpassword", 1);
-			}
-			$u->setCookies(null, null, $CASAuth["RememberMe"]);
-			$user = $u;
+      // 
+			// // Get username
+			// $username = phpCAS::getUser();
+      //
+			// // Get MediaWiki user
+			// $u = User::newFromName($username);
+      //
+			// // Create a new account if the user does not exists
+			// if ($u->getID() == 0 && $CASAuth["CreateAccounts"]) {
+			// 	// Create the user
+			// 	$u->addToDatabase();
+			// 	$u->setRealName($username);
+			// 	$u->setEmail($username."@".$CASAuth["EmailDomain"]);
+			// 	$u->setPassword( md5($username.$CASAuth["PwdSecret"]) ); //PwdSecret is used to salt the username, which is then used to create an md5 hash which becomes the password
+			// 	$u->setToken();
+			// 	$u->saveSettings();
+      //
+			// 	// Update user count
+			// 	$ssUpdate = new SiteStatsUpdate(0,0,0,0,1);
+			// 	$ssUpdate->doUpdate();
+			// }
+      //
+			// // Login successful
+			// if ($CASAuth["RememberMe"]) {
+			// 	$u->setOption("rememberpassword", 1);
+			// }
+			// $u->setCookies(null, null, $CASAuth["RememberMe"]);
+			// $user = $u;
 
 			// Redirect if a returnto parameter exists
 			// $returnto = $wgRequest->getVal("returnto");
