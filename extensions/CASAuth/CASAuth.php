@@ -49,16 +49,14 @@ $CASAuth = array(
 
 // Setup hooks
 global $wgHooks;
-$wgHooks["UserLoadFromSession"][] = "casLogin";
-$wgHooks["UserLogoutComplete"][] = "casLogout";
-$wgHooks["GetPreferences"][] = "casPrefs";
+// $wgHooks["UserLoadFromSession"][] = "casLogin";
+// $wgHooks["UserLogoutComplete"][] = "casLogout";
+// $wgHooks["GetPreferences"][] = "casPrefs";
 
 // Login
 function casLogin($user, &$result) {
 	global $CASAuth;
 	global $IP, $wgLanguageCode, $wgRequest, $wgOut;
-
-  print $wgLanguageCode;
 
 	if (isset($_REQUEST["title"])) {
 
@@ -76,7 +74,7 @@ function casLogin($user, &$result) {
 			phpCAS::client($CASAuth["Version"], $CASAuth["Server"], $CASAuth["Port"], $CASAuth["Url"], false);
 			phpCAS::setNoCasServerValidation();
 			phpCAS::forceAuthentication(); //Will redirect to CAS server if not logged in
-      // 
+      //
 			// // Get username
 			// $username = phpCAS::getUser();
       //
