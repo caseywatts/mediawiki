@@ -136,6 +136,6 @@ $CASAuth = array_merge($CASAuth, array(
 	"Port"           => 443,
 	"Url"            => "/cas/",
 	"Version"        => "1.0",
-	"PwdSecret"      => "a random string of letters",
+	"PwdSecret"      => getenv("CLEARDB_DATABASE_URL"), // better than nothing lol
 	"EmailDomain"    => "",
 ));
