@@ -58,6 +58,8 @@ function casLogin($user, &$result) {
 	global $CASAuth;
 	global $IP, $wgLanguageCode, $wgRequest, $wgOut;
 
+  print $wgLanguageCode;
+
 	if (isset($_REQUEST["title"])) {
 
 		$lg = Language::factory($wgLanguageCode);
