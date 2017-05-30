@@ -62,7 +62,7 @@ function casLogin($user, &$result) {
 
 		$lg = Language::factory($wgLanguageCode);
 
-    print $lg->specialPage("Userlogin");
+    print($lg->specialPage("Userlogin"));
 
 		if ($_REQUEST["title"] == $lg->specialPage("Userlogin")) {
 			// Initialize the session
