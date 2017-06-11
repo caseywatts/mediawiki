@@ -40,7 +40,7 @@ $wgExtensionCredits["other"][] = array(
 //--------------------------------------------------------------------------
 
 $CASAuth = array(
-        "phpCAS"         => "$IP/extensions/CASAuth/CAS",
+        "phpCAS"         => "$IP/vendor/CASAuth/CAS",
         "Server"         => "auth.example.com",
         "LogoutServers"  => false,
         "Port"           => 443,
