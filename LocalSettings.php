@@ -134,3 +134,6 @@ require_once("$IP/extensions/CASAuth/CASAuth.php");
 $CASAuth = array_merge($CASAuth, array(
 	"PwdSecret"      => getenv("CLEARDB_DATABASE_URL"), // better than nothing lol
 ));
+
+error_reporting( -1 );
+ini_set( 'display_errors', 1 );
