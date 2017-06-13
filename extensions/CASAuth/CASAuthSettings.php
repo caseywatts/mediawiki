@@ -47,7 +47,7 @@ $CASAuth["Version"]="1.0";
 # are not regularly being creating, it is recommended that this be set to false
 #
 # Default: $CASAuth["CreateAccounts"]=false
-$CASAuth["CreateAccounts"]=false;
+$CASAuth["CreateAccounts"]=true;
 
 # If the "CreateAccounts" option is set "true", the string below is used as a
 # salt for generating passwords for the users.  This salt is not used by
