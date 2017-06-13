@@ -283,7 +283,7 @@ function casSetup() {
         // Make the session persistent so that phpCAS doesn't change the session id
         // $session->persist();
 
-        require_once("$IP/vendor/jasig/phpcas/CAS"."/CAS.php");
+        require_once($CASAuth["phpCAS"]."/CAS.php");
         phpCAS::client($CASAuth["Version"], $CASAuth["Server"], $CASAuth["Port"], $CASAuth["Url"], false);
         phpCAS::setSingleSignoutCallback('casSingleSignOut');
         phpCAS::setPostAuthenticateCallback('casPostAuth');
