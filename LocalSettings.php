@@ -147,3 +147,13 @@ $CASAuth = array_merge($CASAuth, array(
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+error_reporting( -1 );
+ini_set( 'display_errors', 1 );
+$wgShowExceptionDetails = true;
+$wgDebugToolbar = true;
+$wgShowDebug = true;
+$wgDevelopmentWarnings = true;
+$wgShowSQLErrors = true;
+$wgDebugDumpSql  = true;
+$wgShowDBErrorBacktrace = true;
