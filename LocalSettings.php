@@ -28,7 +28,7 @@ $wgSitename = "YaleWiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://yalewiki.herokuapp.com";
+$wgServer = "http://www.yalewiki.org";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
