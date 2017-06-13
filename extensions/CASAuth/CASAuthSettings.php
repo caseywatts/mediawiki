@@ -69,7 +69,7 @@ $CASAuth["EmailDomain"]="yale.edu";
 # in the $CASAuth["AllowedUsers"] array can login.
 #
 # Default: $CASAuth["RestrictUsers"]=false
-$CASAuth["RestrictUsers"]=true;
+$CASAuth["RestrictUsers"]=false;
 
 # Should CAS users be logged in with the "Remember Me" option?
 #
