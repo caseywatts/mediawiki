@@ -99,14 +99,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "7bfbdbc4c5f55aef66aba0e2370298c0ab739199e22742e09a33a8c85ef72da9";
+$wgSecretKey = getenv("SECRET_KEY");
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "e1b5aa5c57156d92";
+$wgUpgradeKey = getenv("UPGRADE_KEY");
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -140,7 +140,7 @@ require_once("$IP/extensions/CASAuth/CASAuth.php");
 //You can optionally use this if you want to keep your own configuration settings in LocalSettings.php instead of in CASAuth.php
 //Parameters not specified here will use the default setting in CASAuth.php
 $CASAuth = array_merge($CASAuth, array(
-	"PwdSecret"      => getenv("CLEARDB_DATABASE_URL"), // better than nothing lol
+	"PwdSecret"      => getenv("SECRET_KEY"), // better than nothing lol
 ));
 
 
