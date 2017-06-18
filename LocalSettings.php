@@ -140,7 +140,7 @@ require_once("$IP/extensions/CASAuth/CASAuth.php");
 //You can optionally use this if you want to keep your own configuration settings in LocalSettings.php instead of in CASAuth.php
 //Parameters not specified here will use the default setting in CASAuth.php
 $CASAuth = array_merge($CASAuth, array(
-	"PwdSecret"      => getenv("SECRET_KEY"), // better than nothing lol
+	"PwdSecret"      => getenv("SECRET_KEY")
 ));
 
 
